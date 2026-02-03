@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LVW Services | Technology Consulting & Software Solutions</title>
+  <meta name="description" content="LVW Services provides technology consulting, software development, and AI-embedded solutions for businesses. 25+ years of enterprise retail and e-commerce experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #4f46e5;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #64748b;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #4f46e5;
+    }
+
+    .contact-btn {
+      background: #4f46e5;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: #4338ca;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #1a1a2e;
+    }
+
+    .hero h1 span {
+      color: #4f46e5;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #4f46e5;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #1a1a2e;
+      border: 2px solid #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+      border-color: #4f46e5;
+      color: #4f46e5;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-graphic {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 120px;
+      box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.25);
+    }
+
+    /* Stats */
+    .stats {
+      padding: 60px 0;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .stats .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4f46e5;
+      margin-bottom: 8px;
+    }
+
+    .stat-item p {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* Services */
+    .services {
+      padding: 100px 0;
+      background: #f8fafc;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+      border-color: #4f46e5;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #64748b;
+    }
+
+    /* Experience */
+    .experience {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .experience-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .experience-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .experience-text p {
+      color: #64748b;
+      margin-bottom: 32px;
+      font-size: 1.125rem;
+    }
+
+    .experience-list {
+      list-style: none;
+    }
+
+    .experience-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+    }
+
+    .experience-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .company-logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .company-logo {
+      background: #f8fafc;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #312e81 100%);
+      color: white;
+    }
+
+    .contact .section-header h2 {
+      color: white;
+    }
+
+    .contact .section-header p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      text-align: center;
+    }
+
+    .contact-item .icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 16px;
+    }
+
+    .contact-item h4 {
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-item a {
+      color: #a5b4fc;
+      text-decoration: none;
+      font-size: 1.125rem;
+    }
+
+    .contact-item a:hover {
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: #0f0f1a;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .stats .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-content {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">LVW<span>Services</span></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Technology Consulting & <span>Software Solutions</span></h1>
+        <p>We help businesses leverage technology to drive growth. From AI-embedded applications to enterprise e-commerce platforms, we bring 25+ years of experience to every project.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#services" class="btn btn-secondary">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-graphic">💡</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stat-item">
+        <h3>25+</h3>
+        <p>Years in Technology</p>
+      </div>
+      <div class="stat-item">
+        <h3>20</h3>
+        <p>Years in E-Commerce</p>
+      </div>
+      <div class="stat-item">
+        <h3>Fortune</h3>
+        <p>500 Experience</p>
+      </div>
+      <div class="stat-item">
+        <h3>AI</h3>
+        <p>Embedded Solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>What We Do</h2>
+        <p>Comprehensive technology services tailored to your business needs</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>AI & Automation Solutions</h3>
+          <p>Custom AI-embedded applications that automate workflows, enhance decision-making, and deliver intelligent insights for your business.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛒</div>
+          <h3>E-Commerce Development</h3>
+          <p>End-to-end e-commerce solutions from platform selection to implementation, optimization, and marketplace integrations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile & Web Applications</h3>
+          <p>Modern, responsive applications built with the latest technologies. From MVPs to enterprise-scale platforms.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Technology Consulting</h3>
+          <p>Strategic guidance on technology decisions, architecture reviews, and digital transformation initiatives.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Data & Analytics</h3>
+          <p>Turn your data into actionable insights with custom dashboards, reporting systems, and analytics platforms.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Product Development</h3>
+          <p>From concept to launch, we help bring your software product ideas to life with agile development practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="experience-content">
+        <div class="experience-text">
+          <h2>Enterprise Experience, Startup Agility</h2>
+          <p>Our founder brings decades of hands-on experience from leading retail technology organizations, combined with the entrepreneurial drive to build innovative solutions.</p>
+          <ul class="experience-list">
+            <li><span class="check-icon">✓</span> Enterprise retail technology leadership</li>
+            <li><span class="check-icon">✓</span> E-commerce platform architecture</li>
+            <li><span class="check-icon">✓</span> Mobile application development</li>
+            <li><span class="check-icon">✓</span> AI/ML integration & automation</li>
+            <li><span class="check-icon">✓</span> Team building & technical mentorship</li>
+          </ul>
+        </div>
+        <div class="company-logos">
+          <div class="company-logo">🎯 Target Corporation</div>
+          <div class="company-logo">👖 Gap Inc</div>
+          <div class="company-logo">🏬 JCPenney</div>
+          <div class="company-logo">📱 Mobile Consulting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Let's Build Something Together</h2>
+        <p>Ready to discuss your next project? We'd love to hear from you.</p>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="icon">✉️</div>
+          <h4>Email Us</h4>
+          <a href="mailto:contact@lvwservices.com">contact@lvwservices.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="icon">💼</div>
+          <h4>LinkedIn</h4>
+          <a href="https://www.linkedin.com/in/hubbardmichael/" target="_blank">Connect with Michael</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 LVW Services. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
