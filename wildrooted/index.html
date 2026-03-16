@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wild & Rooted Gifts | Nature-Inspired Gifts & Home Décor</title>
+  <meta name="description" content="Wild & Rooted Gifts — handcrafted nature-inspired gifts, home décor, and accessories. Thoughtfully designed products celebrating the beauty of the natural world. Shop on Etsy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2D5016;
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text span {
+      color: #6B8F3E;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2D5016;
+    }
+
+    .shop-btn {
+      background: #2D5016;
+      color: white !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .shop-btn:hover {
+      background: #3D6B1E !important;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 80px;
+      background: linear-gradient(135deg, #f8faf5 0%, #EBF2E3 100%);
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6B8F3E;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 700;
+      color: #1a2e0d;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #4a5568;
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2D5016;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-primary:hover {
+      background: #3D6B1E;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: #2D5016;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      border: 2px solid #2D5016;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #f0f7e8;
+    }
+
+    .hero-leaf {
+      font-size: 64px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* Categories */
+    .categories {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a2e0d;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .category-card {
+      background: #f8faf5;
+      border: 1px solid #dce8d0;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.12);
+    }
+
+    .category-icon {
+      font-size: 40px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .category-name {
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a2e0d;
+      margin-bottom: 6px;
+    }
+
+    .category-desc {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* About */
+    .about {
+      padding: 80px 0;
+      background: #f8faf5;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a2e0d;
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .about p {
+      color: #4a5568;
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .values {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .value-icon {
+      font-size: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .value-text strong {
+      display: block;
+      font-weight: 600;
+      color: #1a2e0d;
+      margin-bottom: 2px;
+      font-size: 15px;
+    }
+
+    .value-text span {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .about-visual {
+      background: linear-gradient(145deg, #EBF2E3 0%, #D4E8C2 100%);
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .about-visual .big-emoji {
+      font-size: 80px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .about-visual p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      color: #2D5016;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* Etsy badge */
+    .etsy-section {
+      padding: 70px 0;
+      text-align: center;
+    }
+
+    .etsy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #F56400;
+      color: white;
+      text-decoration: none;
+      padding: 18px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(245, 100, 0, 0.3);
+    }
+
+    .etsy-badge:hover {
+      background: #D45600;
+      transform: translateY(-2px);
+    }
+
+    .etsy-note {
+      margin-top: 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .etsy-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #2D5016;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #eee;
+      text-align: center;
+    }
+
+    footer p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #6B8F3E;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-visual {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-mark">🌿</span>
+        <span class="logo-text">Wild <span>&</span> Rooted</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="shop-btn">Shop on Etsy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-leaf">🌿</span>
+      <p class="hero-eyebrow">Nature-Inspired Gifts & Décor</p>
+      <h1>Gifts That Celebrate the Beauty of the Natural World</h1>
+      <p>Thoughtfully designed prints, home décor, and accessories inspired by nature, plants, and the wild things that ground us.</p>
+      <div class="hero-cta">
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="btn-primary">
+          🛍️ Shop on Etsy
+        </a>
+        <a href="#collections" class="btn-secondary">
+          🌱 Browse Collections
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <section class="categories" id="collections">
+    <div class="container">
+      <h2 class="section-title">Our Collections</h2>
+      <p class="section-subtitle">Something for every nature lover, plant parent, and outdoor enthusiast.</p>
+      <div class="category-grid">
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="category-card">
+          <span class="category-icon">🌿</span>
+          <div class="category-name">Plant & Botanical</div>
+          <div class="category-desc">For the plant parents and garden lovers</div>
+        </a>
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="category-card">
+          <span class="category-icon">⭐</span>
+          <div class="category-name">Astrology & Celestial</div>
+          <div class="category-desc">Stars, signs, and cosmic energy</div>
+        </a>
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="category-card">
+          <span class="category-icon">🏔️</span>
+          <div class="category-name">Outdoor & Adventure</div>
+          <div class="category-desc">Mountains, trails, and wild places</div>
+        </a>
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="category-card">
+          <span class="category-icon">🐾</span>
+          <div class="category-name">Pet Lovers</div>
+          <div class="category-desc">For the dogs, cats, and the humans who love them</div>
+        </a>
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="category-card">
+          <span class="category-icon">🌱</span>
+          <div class="category-name">Wellness & Mindful</div>
+          <div class="category-desc">Grounding gifts for everyday calm</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2>Rooted in Nature, Designed with Care</h2>
+          <p>Wild & Rooted Gifts was born from a love of the natural world and a belief that the best gifts feel personal, intentional, and alive with meaning.</p>
+          <p>Every design celebrates something real — a plant that grounds you, a constellation that guides you, a mountain that calls you back.</p>
+          <div class="values">
+            <div class="value-item">
+              <span class="value-icon">🌿</span>
+              <div class="value-text">
+                <strong>Nature-Inspired Designs</strong>
+                <span>Every product starts with something real from the natural world</span>
+              </div>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🎁</span>
+              <div class="value-text">
+                <strong>Thoughtful Gift-Giving</strong>
+                <span>Designed to feel personal, not generic</span>
+              </div>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">✨</span>
+              <div class="value-text">
+                <strong>Quality Print-on-Demand</strong>
+                <span>Fulfilled fresh for every order, shipped with care</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <span class="big-emoji">🌲</span>
+          <p>"The clearest way into the Universe is through a forest wilderness."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Etsy CTA -->
+  <section class="etsy-section">
+    <div class="container">
+      <h2 class="section-title">Find Us on Etsy</h2>
+      <p class="section-subtitle" style="margin-bottom: 32px;">All products are available through our Etsy shop with secure checkout and buyer protection.</p>
+      <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener" class="etsy-badge">
+        🛍️ Visit Wild & Rooted Gifts on Etsy
+      </a>
+      <p class="etsy-note">Secure checkout · Etsy buyer protection · Ships worldwide</p>
+      <div class="etsy-stats">
+        <div class="stat">
+          <span class="stat-number">🌿</span>
+          <div class="stat-label">Nature-Inspired Designs</div>
+        </div>
+        <div class="stat">
+          <span class="stat-number">🎁</span>
+          <div class="stat-label">Gift-Ready Packaging</div>
+        </div>
+        <div class="stat">
+          <span class="stat-number">⭐</span>
+          <div class="stat-label">5-Star Quality</div>
+        </div>
+        <div class="stat">
+          <span class="stat-number">🌍</span>
+          <div class="stat-label">Ships Worldwide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        Wild & Rooted Gifts &nbsp;·&nbsp;
+        <a href="https://www.etsy.com/shop/WildandRootedGifts" target="_blank" rel="noopener">Etsy Shop</a>
+        &nbsp;·&nbsp;
+        <a href="https://lvwservices.com" target="_blank" rel="noopener">LVW Services</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
