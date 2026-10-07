@@ -1,5 +1,16 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies/index.html"
+    },
+    {
+      "source": "/case-studies/product-setup",
+      "destination": "/case-studies/product-setup/index.html"
+    },
+    {
+      "source": "/wildrooted",
+      "destination": "/wildrooted/index.html"
+    }
   ]
 }
