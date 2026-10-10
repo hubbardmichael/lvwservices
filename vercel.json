@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
       "source": "/case-studies",
       "destination": "/case-studies/index.html"
     },
